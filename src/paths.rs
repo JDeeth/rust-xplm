@@ -6,6 +6,7 @@ use xplm_sys::{
 
 use super::ffi::StringBuffer;
 
+/// Get path to this plugin
 pub fn plugin_path() -> Result<PathBuf, Utf8Error> {
     let mut path = StringBuffer::new(512);
     unsafe {
@@ -20,6 +21,8 @@ pub fn plugin_path() -> Result<PathBuf, Utf8Error> {
     Ok(PathBuf::from(path.as_str()?))
 }
 
+/// Get path to X-Plane's preferences file
+/// (usually "Output/preferences/Set X-Plane.prf")
 pub fn prefs_path() -> Result<PathBuf, Utf8Error> {
     let mut path = StringBuffer::new(512);
     unsafe {
@@ -28,6 +31,7 @@ pub fn prefs_path() -> Result<PathBuf, Utf8Error> {
     Ok(PathBuf::from(path.as_str()?))
 }
 
+/// Get path to X-Plane root folder
 pub fn system_path() -> Result<PathBuf, Utf8Error> {
     let mut path = StringBuffer::new(512);
     unsafe {
@@ -36,6 +40,7 @@ pub fn system_path() -> Result<PathBuf, Utf8Error> {
     Ok(PathBuf::from(path.as_str()?))
 }
 
+/// Get path to loaded aircraft's .acf file
 pub fn aircraft_path() -> Result<PathBuf, Utf8Error> {
     let mut path = StringBuffer::new(512);
     unsafe {
