@@ -10,7 +10,6 @@
 //! Foreign function interface utilities
 //!
 
-use std::iter;
 use std::os::raw::c_char;
 use std::str;
 use std::str::Utf8Error;

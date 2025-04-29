@@ -1,7 +1,6 @@
 use super::{Access, ArrayRead, ArrayReadWrite, DataRead, DataReadWrite, DataType, ReadOnly};
 use std::cmp;
 use std::ffi::{CString, NulError};
-use std::i32;
 use std::marker::PhantomData;
 use std::os::raw::{c_int, c_void};
 use std::ptr;

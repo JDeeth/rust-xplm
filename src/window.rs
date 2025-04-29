@@ -90,6 +90,8 @@ impl Window {
     /// Creates a new window with the provided geometry and returns a reference to it
     ///
     /// The window is originally not visible.
+    // TODO: determine if Clippy warning about `new` not returning `self` is applicable
+    #[allow(clippy::new_ret_no_self)]
     pub fn new<R: Into<Rect<i32>>, D: WindowDelegate>(geometry: R, delegate: D) -> WindowRef {
         let geometry = geometry.into();
 
