@@ -370,7 +370,7 @@ impl ActionItem {
 
     fn handle_click(&self) {
         let mut borrow = self.handler.borrow_mut();
-        borrow.item_clicked(&self);
+        borrow.item_clicked(self);
     }
 }
 

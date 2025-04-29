@@ -8,9 +8,10 @@ use xplm_sys;
 use super::geometry::{Point, Rect};
 
 /// Cursor states that windows can apply
-#[derive(Debug, Clone)]
+#[derive(Debug, Clone, Default)]
 pub enum Cursor {
     /// X-Plane draws the default cursor
+    #[default]
     Default,
     /// X-Plane draws an arrow cursor (not any other cursor type)
     Arrow,
@@ -26,12 +27,6 @@ impl Cursor {
             Cursor::Arrow => xplm_sys::xplm_CursorArrow as xplm_sys::XPLMCursorStatus,
             Cursor::None => xplm_sys::xplm_CursorHidden as xplm_sys::XPLMCursorStatus,
         }
-    }
-}
-
-impl Default for Cursor {
-    fn default() -> Self {
-        Cursor::Default
     }
 }
 
